@@ -1,0 +1,75 @@
+
+rules_version = '2';
+
+/**
+ * @file firestore.rules
+ * @description Firestore Security Rules for Digitiful.
+ * Protocol Status: Hardened // Last Sync: Unified // Update: Force Sync
+ */
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid));
+    }
+
+    // Auction items are public, but only signed-in users can bid (update)
+    match /auctionItems/{auctionItemId} {
+      allow get, list: if true;
+      allow create, delete: if isAdmin();
+      allow update: if isSignedIn();
+    }
+
+    // Clients are public, admin-only writes
+    match /clients/{clientId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    // Services and Portfolio are public, admin-only writes
+    match /services/{serviceId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    match /portfolioItems/{portfolioItemId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    match /aboutMe/{aboutMeId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    // Client-specific collections
+    match /tasks/{taskId} {
+      allow get, list, create, update, delete: if isSignedIn();
+    }
+
+    match /activities/{activityId} {
+        allow get, list, create, update, delete: if isSignedIn();
+    }
+
+    // Drop-box for inquiries
+    match /clientInquiries/{clientInquiryId} {
+      allow create: if true;
+      allow get, list, update, delete: if isAdmin();
+    }
+
+    match /contentRefinements/{contentRefinementId} {
+      allow read, write: if isAdmin();
+    }
+
+    match /roles_admin/{userId} {
+      allow read: if isSignedIn();
+      // Allow a user to create their own admin document to enable the /setup protocol.
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update, delete: if isAdmin();
+    }
+  }
+}

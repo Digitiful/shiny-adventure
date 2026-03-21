@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "about-me",
+      "description": "A portrait of the consultant.",
+      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjYyMjM2OTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "about-me-alt",
+      "description": "Isometric icons representing web hosting and decentralized technology.",
+      "imageUrl": "https://digitiful.net/wp-content/uploads/2026/01/607.webp",
+      "imageHint": "decentralized network"
+    },
+    {
+      "id": "portfolio-retail",
+      "description": "A modern retail store interior.",
+      "imageUrl": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "retail store"
+    },
+    {
+      "id": "portfolio-saas",
+      "description": "A computer screen showing graphs and charts.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "data charts"
+    },
+    {
+      "id": "portfolio-consulting",
+      "description": "A group of professionals in a meeting.",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "portfolio-quicktolink-seo",
+      "description": "A screenshot of the QuickToLink homepage.",
+      "imageUrl": "https://i.imgur.com/p5bLq0b.png",
+      "imageHint": "website homepage"
+    },
+    {
+      "id": "portfolio-mobile-app",
+      "description": "A screenshot of a sleek mobile application interface.",
+      "imageUrl": "https://images.unsplash.com/photo-1621947081720-86970823b77a?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "product-template",
+      "description": "A sleek, modern user interface for a SaaS application, showing dashboards and charts.",
+      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "saas dashboard"
+    },
+    {
+      "id": "product-ebook",
+      "description": "An open book with glowing, abstract technological illustrations coming out of it.",
+      "imageUrl": "https://images.unsplash.com/photo-1579549354959-502c3008985c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "glowing book"
+    },
+    {
+      "id": "product-dashboard",
+      "description": "A vibrant and complex data analytics dashboard on a screen, showing various charts and graphs.",
+      "imageUrl": "https://images.unsplash.com/photo-1614036622531-9310a0833b63?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "analytics dashboard"
+    },
+    {
+      "id": "warehouse-synth",
+      "description": "A vintage analog synthesizer with many knobs and sliders.",
+      "imageUrl": "https://images.unsplash.com/photo-1593697821252-a2f9776384a3?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "analog synthesizer"
+    },
+    {
+      "id": "warehouse-glasses",
+      "description": "A person wearing futuristic augmented reality smart glasses.",
+      "imageUrl": "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "smart glasses"
+    },
+    {
+      "id": "warehouse-keyboard",
+      "description": "A beautifully crafted custom mechanical keyboard with colorful keycaps.",
+      "imageUrl": "https://images.unsplash.com/photo-1618384887924-274d43516186?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "mechanical keyboard"
+    },
+    {
+      "id": "operator-qr",
+      "description": "A digital QR code for system authentication.",
+      "imageUrl": "https://placehold.co/400x400/0a0a0a/9333ea?text=QR+SIGNAL",
+      "imageHint": "qr code"
+    }
+  ]
+}
