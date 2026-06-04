@@ -1,41 +1,13 @@
+"apphosting": [
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "apphosting": [
-    {
-      "backendId": "studio",
-      "rootDir": "y",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        "functions"
-      ]
-    },
-    {
-      "backendId": "studio",
-      "rootDir": "\\",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        "functions"
-      ]
-    },
-    {
-      "backendId": "studio",
-      "rootDir": "/",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        "functions"
-      ]
-    }
-  ]
+"backendId": "studio",
+"rootDir": ".",
+"ignore": [
+"node_modules",
+".git",
+"firebase-debug.log",
+"firebase-debug.*.log",
+"functions"
+]
 }
+]
