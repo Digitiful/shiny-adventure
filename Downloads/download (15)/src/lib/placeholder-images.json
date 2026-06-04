@@ -1,0 +1,52 @@
+{
+  "placeholderImages": [
+    {
+      "id": "about-me",
+      "description": "A portrait of the lead Operator, SAM.",
+      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?q=80&w=1080&auto=format&fit=crop",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "about-me-alt",
+      "description": "High-tech data network visualization.",
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+      "imageHint": "data network"
+    },
+    {
+      "id": "portfolio-retail",
+      "description": "A modern retail store interior.",
+      "imageUrl": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "retail store"
+    },
+    {
+      "id": "portfolio-saas",
+      "description": "A computer screen showing graphs and charts.",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "data charts"
+    },
+    {
+      "id": "portfolio-consulting",
+      "description": "A group of professionals in a meeting.",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "portfolio-quicktolink-seo",
+      "description": "A screenshot of the QuickToLink homepage.",
+      "imageUrl": "https://i.imgur.com/p5bLq0b.png",
+      "imageHint": "website homepage"
+    },
+    {
+      "id": "portfolio-mobile-app",
+      "description": "A screenshot of a sleek mobile application interface.",
+      "imageUrl": "https://images.unsplash.com/photo-1621947081720-86970823b77a?q=80&w=1974&auto=format&fit=crop",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "product-template",
+      "description": "A sleek, modern user interface for a SaaS application.",
+      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "saas dashboard"
+    }
+  ]
+}

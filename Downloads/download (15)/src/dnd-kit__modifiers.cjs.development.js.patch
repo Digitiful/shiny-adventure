@@ -1,0 +1,19 @@
+*** dnd-kit__modifiers.cjs.development.js
+--- dnd-kit__modifiers.cjs.development.js
+***************
+*** 43,49 ****
+    if (document.scrollingElement && !isScrollable(document.scrollingElement)) {
+      return null;
+    }
+!   return document.scrollingElement || document.documentElement;
+  }
+  function getScrollableAncestors(element) {
+    var ancestors = [];
+--- 43,49 ----
+    if (document.scrollingElement && !isScrollable(document.scrollingElement)) {
+      return null;
+    }
+!   return document.scrollingElement;
+  }
+  function getScrollableAncestors(element) {
+    var ancestors = [];
