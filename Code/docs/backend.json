@@ -1,0 +1,123 @@
+
+{
+  "entities": {
+    "Client": {
+      "title": "Client",
+      "type": "object",
+      "description": "Represents a client partner/logo displayed on the agency site.",
+      "properties": {
+        "name": { "type": "string" },
+        "logo": { "type": "string", "description": "URL of the client logo." },
+        "href": { "type": "string", "format": "uri", "description": "Optional website link." },
+        "invert": { "type": "boolean", "description": "Whether to apply CSS invert for visibility." },
+        "order": { "type": "number", "description": "Display sort order." }
+      },
+      "required": ["name", "logo"]
+    },
+    "Technology": {
+      "title": "Technology",
+      "type": "object",
+      "description": "Represents a technology node in the Neural Tree orbit.",
+      "properties": {
+        "name": { "type": "string" },
+        "logo": { "type": "string", "description": "URL of the tech logo." },
+        "href": { "type": "string", "format": "uri" },
+        "invert": { "type": "boolean" },
+        "order": { "type": "number" }
+      },
+      "required": ["name", "logo"]
+    },
+    "Activity": {
+      "title": "Activity",
+      "type": "object",
+      "description": "Represents an item in the Project Hub activity feed.",
+      "properties": {
+        "type": { "type": "string", "enum": [ "update", "task" ] },
+        "author": { "type": "string" },
+        "authorImage": { "type": "string", "format": "uri" },
+        "text": { "type": "string" },
+        "time": { "type": "string", "format": "date-time" },
+        "taskId": { "type": "string" }
+      },
+      "required": ["type", "author", "text", "time"]
+    },
+    "Task": {
+      "title": "Task",
+      "type": "object",
+      "description": "Represents a task on the Kanban board.",
+      "properties": {
+        "title": { "type": "string" },
+        "status": { "type": "string", "enum": ["todo", "in-progress", "done", "archived"] },
+        "priority": { "type": "string", "enum": ["Low", "Medium", "High"] },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "assignee": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "status", "priority", "createdAt"]
+    },
+    "Service": {
+      "title": "Service",
+      "type": "object",
+      "description": "Represents a service offered.",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "icon": { "type": "string" }
+      },
+      "required": ["title", "description", "icon"]
+    },
+    "ClientInquiry": {
+      "title": "ClientInquiry",
+      "type": "object",
+      "description": "Represents a client inquiry submitted through the contact form.",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "message": { "type": "string" },
+        "submittedDate": { "type": "string", "format": "date-time" },
+        "type": { "type": "string", "enum": ["General Inquiry", "Booking Request"] },
+        "bookingFor": { "type": "string" }
+      },
+      "required": ["name", "email", "message", "submittedDate", "type"]
+    }
+  },
+  "auth": {
+    "providers": [ "password", "anonymous" ]
+  },
+  "firestore": {
+    "/clients/{clientId}": {
+      "schema": { "$ref": "#/entities/Client" },
+      "description": "Stores client partners for the landing page."
+    },
+    "/technology/{techId}": {
+      "schema": { "$ref": "#/entities/Technology" },
+      "description": "Stores technology nodes for the Neural Tree."
+    },
+    "/activities/{activityId}": {
+      "schema": { "$ref": "#/entities/Activity" },
+      "description": "Stores activity feed items for the Project Hub."
+    },
+    "/tasks/{taskId}": {
+      "schema": { "$ref": "#/entities/Task" },
+      "description": "Stores tasks for the client dashboard Kanban board."
+    },
+    "/services/{serviceId}": {
+      "schema": { "$ref": "#/entities/Service" },
+      "description": "Stores information about services offered."
+    },
+    "/clientInquiries/{clientInquiryId}": {
+      "schema": { "$ref": "#/entities/ClientInquiry" },
+      "description": "Stores client inquiries submitted through the contact form."
+    },
+    "/roles_admin/{userId}": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "isAdmin": { "type": "boolean" },
+          "createdOn": { "type": "string", "format": "date-time" }
+        }
+      },
+      "description": "Indicates admin privileges."
+    }
+  }
+}

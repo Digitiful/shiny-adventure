@@ -1,0 +1,35 @@
+
+[
+  {
+    "id": "alien-warehouse",
+    "title": "Alien Warehouse // Scaling the Vault",
+    "imageId": "https://placehold.co/800x600/0a0a0a/ffffff?text=ALIEN+WAREHOUSE",
+    "description": "Executed a high-velocity e-commerce scale-up. In under 60 days, we re-architected the store infrastructure and deployed an organic visibility protocol that transformed their digital footprint.",
+    "testimonial": {
+      "text": "Huge thanks to Digitiful for leveling up my store 🚀 In under 60 days, they helped me hit 10k in sales, over 1 million organic impressions, and 15,000+ listing views in just 3 months. If you're looking to grow your online presence fast, these are the people to call. No fluff—just results.",
+      "author": "Irune // Alien Warehouse",
+      "avatar": "https://i.pravatar.cc/150?u=irune"
+    },
+    "results": [
+      { "icon": "TrendingUp", "label": "$10k+ Sales (60 Days)" },
+      { "icon": "Target", "label": "1M+ Organic Impressions" },
+      { "icon": "Star", "label": "15k+ Listing Views" }
+    ]
+  },
+  {
+    "id": "story-1",
+    "title": "Foot Placard // Ecommerce Optimization",
+    "imageId": "portfolio-saas",
+    "description": "Re-engineered a legacy retail system onto a high-performance cloud platform. Optimized for zero-latency checkout and global data synchronization.",
+    "testimonial": {
+      "text": "The new platform is not only faster and more reliable, but our conversion rate has also increased by 25%. The Digitiful team delivered beyond our expectations.",
+      "author": "Mo Wahdan // CEO, Foot Placard",
+      "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+    },
+    "results": [
+      { "icon": "TrendingUp", "label": "25% Conv. Increase" },
+      { "icon": "Target", "label": "40% Speed Boost" },
+      { "icon": "Star", "label": "99.9% Uptime Secured" }
+    ]
+  }
+]
