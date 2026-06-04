@@ -1,0 +1,57 @@
+
+[
+  {
+    "icon": "Database",
+    "title": "Data Engineering",
+    "description": "Building robust data pipelines to ensure your data is clean, accessible, and ready for analysis.",
+    "detailedDescription": "Our Data Engineering services focus on designing, building, and maintaining scalable and reliable data infrastructure. We handle everything from data ingestion and ETL/ELT processes to data warehousing and data governance. By ensuring data quality and accessibility, we empower your organization to make data-driven decisions with confidence."
+  },
+  {
+    "icon": "LineChart",
+    "title": "Data Analytics & Reporting",
+    "description": "Transforming raw data into actionable insights with custom dashboards and in-depth reporting.",
+    "detailedDescription": "We turn complex datasets into clear, actionable insights. Our team creates custom dashboards, visualizations, and comprehensive reports that allow you to monitor key performance indicators, identify trends, and uncover opportunities for growth. We help you understand your business at a deeper level."
+  },
+  {
+    "icon": "BookOpen",
+    "title": "Digital Training & Support",
+    "description": "Empowering your team with the skills and knowledge to excel in a digital-first environment.",
+    "detailedDescription": "Digital transformation is as much about people as it is about technology. We provide tailored training programs and ongoing support to ensure your team is proficient with new tools and workflows. Our goal is to foster a culture of continuous learning and digital literacy within your organization."
+  },
+  {
+    "icon": "Briefcase",
+    "title": "IT Consulting",
+    "description": "Providing strategic guidance to align your technology with your business goals for optimal performance.",
+    "detailedDescription": "Our IT consulting services provide a strategic roadmap for your technology investments. We assess your current IT landscape, identify gaps, and recommend solutions that align with your long-term business objectives. From infrastructure planning to cybersecurity strategy, we are your trusted technology advisors."
+  },
+  {
+    "icon": "Cloud",
+    "title": "Cloud Solutions",
+    "description": "Leveraging the power of the cloud for scalable, secure, and cost-effective infrastructure and services.",
+    "detailedDescription": "Unlock the full potential of the cloud with our end-to-end cloud solutions. We specialize in cloud migration, infrastructure-as-a-service (IaaS), platform-as-a-service (PaaS), and serverless architecture. We help you build a secure, scalable, and cost-efficient cloud environment tailored to your needs."
+  },
+  {
+    "icon": "Code",
+    "title": "Web Development",
+    "description": "Creating high-performance, beautiful websites and applications that drive user engagement and growth.",
+    "detailedDescription": "Your website is your digital storefront. We build modern, responsive, and high-performance websites and web applications that provide an exceptional user experience. From corporate sites to complex web platforms, we use the latest technologies to deliver solutions that are both beautiful and functional."
+  },
+  {
+    "icon": "PenTool",
+    "title": "Brand Development",
+    "description": "Crafting unique and memorable brand identities that resonate with your target audience and stand out.",
+    "detailedDescription": "A strong brand is the foundation of a successful business. Our brand development services cover everything from logo design and brand guidelines to messaging and market positioning. We help you create a cohesive and compelling brand identity that connects with your customers on an emotional level."
+  },
+  {
+    "icon": "ShoppingCart",
+    "title": "E-commerce Solutions",
+    "description": "Building powerful online stores that deliver seamless shopping experiences and drive sales.",
+    "detailedDescription": "We build powerful and user-friendly e-commerce platforms that drive sales and customer loyalty. Our solutions include everything from custom storefronts and payment gateway integration to inventory management and order fulfillment workflows. We create seamless online shopping experiences that convert visitors into customers."
+  },
+  {
+    "icon": "Megaphone",
+    "title": "Digital Marketing",
+    "description": "Executing targeted campaigns that boost brand visibility, drive traffic, and generate qualified leads.",
+    "detailedDescription": "Reach your target audience and grow your business with our data-driven digital marketing services. We specialize in SEO, content marketing, social media management, and paid advertising campaigns. Our integrated approach ensures you get the maximum return on your marketing investment."
+  }
+]
