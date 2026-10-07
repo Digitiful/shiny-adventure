@@ -1,0 +1,27 @@
+{
+    "name": "Digitiful",
+    "logoUrl": "https://digitiful.net/wp-content/uploads/elementor/thumbs/DG-05-1-r9tunke78cyiykbizacfpfcdwqz7outsg8xjrtvb4a.png",
+    "slogan": "Digital. Precise. Deliberate.",
+    "brandRoadmap": {
+        "status": "Hardened",
+        "phase": "April MVP launch",
+        "persona": "Mindful Guide (Digi.)",
+        "visualSignature": "Deep Web Underground",
+        "imageryStyle": "Dark Room (Chiaroscuro)",
+        "palette": {
+            "primary": "#9333ea",
+            "background": "#0a0a0a",
+            "signal": "#22c55e",
+            "accent": "#1a1a1a"
+        },
+        "typography": {
+            "body": "Inter",
+            "system": "Monospace"
+        }
+    },
+    "colors": [
+        "#9333ea",
+        "#0a0a0a",
+        "#22c55e"
+    ]
+}

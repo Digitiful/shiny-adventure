@@ -1,0 +1,63 @@
+
+[
+  { 
+    "name": "Google Analytics", 
+    "logo": "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg", 
+    "href": "https://analytics.google.com/",
+    "invert": false
+  },
+  {
+    "name": "React",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "href": "https://react.dev/",
+    "invert": false
+  },
+  {
+    "name": "HTML5",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+    "invert": false
+  },
+  {
+    "name": "Python",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png",
+    "href": "https://www.python.org/",
+    "invert": false
+  },
+  {
+    "name": "TypeScript",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+    "href": "https://www.typescriptlang.org/",
+    "invert": false
+  },
+  {
+    "name": "Node.js",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png",
+    "href": "https://nodejs.org/",
+    "invert": false
+  },
+  {
+    "name": "Google Cloud",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png",
+    "href": "https://cloud.google.com/",
+    "invert": false
+  },
+  {
+    "name": "Antigravity",
+    "logo": "https://static.wikia.nocookie.net/logos/images/d/de/Gears_of_warlogo.png",
+    "href": "https://firebase.google.com",
+    "invert": false
+  },
+  { 
+    "name": "Matrix", 
+    "logo": "https://matrix.org/images/matrix-logo-white.svg", 
+    "href": "https://matrix.org/",
+    "invert": true
+  },
+  {
+    "name": "NotebookLM",
+    "logo": "https://notebooklm.google/_/static/branding/v4/light_mode/notebook-logo.svg",
+    "href": "https://notebooklm.google",
+    "invert": true
+  }
+]

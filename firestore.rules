@@ -1,46 +1,14 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // ===============================================================
-    // Assumed Data Model
-    // ===============================================================
-    //
-    // Collection: users
-    // Document ID: {userId} (Firebase Auth UID)
-    // Fields:
-    //   - uid: string (required) - The user's unique ID
-    //   - displayName: string (optional) - The user's name
-    //   - email: string (required, email format) - The user's email
-    //   - photoURL: string (optional, url format) - The user's avatar
-    //   - createdAt: timestamp (optional) - Creation time
-    //   - lastLogin: timestamp (optional) - Last login time
-    //
-    // ===============================================================
 
-    // ===============================================================
-    // Helper Functions
-    // ===============================================================
-    function isAuthenticated() {
-      return request.auth != null;
-    }
-
-    function isOwner(userId) {
-      return isAuthenticated() && request.auth.uid == userId;
-    }
-
-    function isValidEmail(email) {
-      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
-    }
-
-    function isValidUrl(url) {
-      return url is string && (url.matches("^https://.*") || url.matches("^http://.*"));
-    }
-
-    function hasOnlyAllowedFields(fields) {
-      return request.resource.data.keys().hasOnly(fields);
-    }
-
-    // Domain Validator for UserProfile
+    // --- Helper Functions ---
+    function isSignedIn() { return request.auth != null; }
+    function isAdmin() { return isSignedIn() && exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid)); }
+    function isOwner(userId) { return isSignedIn() && request.auth.uid == userId; }
+    function isValidEmail(email) { return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"); }
+    function isValidUrl(url) { return url is string && (url.matches("^https://.*") || url.matches("^http://.*")); }
+    function hasOnlyAllowedFields(fields) { return request.resource.data.keys().hasOnly(fields); }
     function isValidUserProfile(data) {
       return hasOnlyAllowedFields(['uid', 'displayName', 'email', 'photoURL', 'createdAt', 'lastLogin']) &&
              data.uid is string && data.uid.size() > 0 &&
@@ -49,23 +17,30 @@ service cloud.firestore {
              (!('photoURL' in data) || isValidUrl(data.photoURL));
     }
 
-    // ===============================================================
-    // Rules
-    // ===============================================================
-
+    // --- Rules ---
+    match /auctionItems/{auctionItemId} {
+      allow get, list: if true;
+      allow create, delete: if isAdmin();
+      allow update: if isSignedIn();
+    }
+    match /clients/{clientId} { allow get, list: if true; allow write: if isAdmin(); }
+    match /services/{serviceId} { allow get, list: if true; allow write: if isAdmin(); }
+    match /portfolioItems/{portfolioItemId} { allow get, list: if true; allow write: if isAdmin(); }
+    match /aboutMe/{aboutMeId} { allow get, list: if true; allow write: if isAdmin(); }
+    match /tasks/{taskId} { allow read, write: if isSignedIn(); }
+    match /activities/{activityId} { allow read, write: if isSignedIn(); }
+    match /clientInquiries/{clientInquiryId} { allow create: if true; allow get, list, update, delete: if isAdmin(); }
+    match /contentRefinements/{contentRefinementId} { allow read, write: if isAdmin(); }
+    match /roles_admin/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update, delete: if isAdmin();
+    }
     match /users/{userId} {
-      // Only the owner can read their own profile (contains PII like email)
       allow read: if isOwner(userId);
-      
-      // Only the owner can create/update their own profile
       allow create: if isOwner(userId) && isValidUserProfile(request.resource.data);
-      allow update: if isOwner(userId) && isValidUserProfile(request.resource.data) && 
-                    request.resource.data.uid == resource.data.uid; // UID is immutable
+      allow update: if isOwner(userId) && isValidUserProfile(request.resource.data) && request.resource.data.uid == resource.data.uid;
     }
-
-    // Default deny
-    match /{path=**} {
-      allow read, write: if false;
-    }
+    match /{path=**} { allow read, write: if false; }
   }
 }

@@ -1,0 +1,8 @@
+
+[
+    { "name": "Copper Branch", "logo": "https://placehold.co/300x120/0a0a0a/ffffff?text=COPPER+BRANCH", "href": "https://eatcopperbranch.com/", "invert": false },
+    { "name": "Quick To Link", "logo": "https://placehold.co/400x200/0a0a0a/ffffff?text=QUICK+TO+LINK", "href": "https://quicktolink.com", "invert": true },
+    { "name": "Alien Warehouse", "logo": "https://placehold.co/400x200/0a0a0a/ffffff?text=ALIEN+WAREHOUSE", "href": "https://alien-warehouse.com", "invert": false },
+    { "name": "MechBros", "logo": "https://placehold.co/300x120/0a0a0a/9333ea?text=MECHBROS", "href": "https://mechbros.ca/", "invert": false },
+    { "name": "ZAW Project", "logo": "https://placehold.co/400x200/0a0a0a/ffffff?text=ZAW+PROJECT", "href": "https://zaw-project.com/", "invert": true }
+]

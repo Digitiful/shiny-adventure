@@ -1,0 +1,30 @@
+
+[
+    {
+      "id": "item-1",
+      "title": "Vintage Analog Synthesizer",
+      "description": "A rare, fully restored 1978 analog synthesizer with a unique warm sound. Perfect for collectors and music producers.",
+      "imageId": "warehouse-synth",
+      "startingBid": 1200,
+      "currentBid": 1450,
+      "endDate": "2026-02-15T22:00:00Z"
+    },
+    {
+      "id": "item-2",
+      "title": "Prototype Smart Glasses",
+      "description": "A developer prototype of next-gen AR smart glasses. Not available to the public. Includes SDK access.",
+      "imageId": "warehouse-glasses",
+      "startingBid": 800,
+      "currentBid": 950,
+      "endDate": "2026-02-18T20:00:00Z"
+    },
+    {
+      "id": "item-3",
+      "title": "Limited Edition Mechanical Keyboard",
+      "description": "A custom-built mechanical keyboard, one of only 50 made, featuring a unique colorway and premium switches.",
+      "imageId": "warehouse-keyboard",
+      "startingBid": 350,
+      "currentBid": 525,
+      "endDate": "2026-02-20T18:00:00Z"
+    }
+]
