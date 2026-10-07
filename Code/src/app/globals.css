@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 270 81% 56%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 270 81% 50%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 270 77% 90%;
+    --accent-foreground: 270 77% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 270 81% 56%;
+    --signal: 142 71% 45%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 270 81% 56%; /* Anomaly Purple */
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 270 81% 50%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 270 77% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 270 81% 56%;
+    --signal: 142 71% 45%; /* Signal Green */
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground relative min-h-screen;
+  }
+  /* Deep Web Grid Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(to right, hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--primary) / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .truncate-2-lines {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .animate-marquee-slow {
+    animation: marquee 60s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes breathing {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counter-rotate {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 40s ease-in-out infinite alternate;
+}
+
+.animate-breathing {
+  animation: breathing 8s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit-rotate var(--orbit-duration, 60s) linear infinite;
+}
+
+.animate-counter-rotate {
+  animation: counter-rotate var(--orbit-duration, 60s) linear infinite;
+}
+
+.pause-animation {
+  animation-play-state: paused !important;
+}
+
+.animate-spin-slow {
+  animation: orbit-rotate 60s linear infinite;
+}

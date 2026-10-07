@@ -1,0 +1,536 @@
+
+{
+  "entities": {
+    "AuctionItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AuctionItem",
+      "type": "object",
+      "description": "Represents an item up for auction in the Digital Warehouse.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the auction item."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the item."
+        },
+        "imageId": {
+          "type": "string",
+          "description": "The ID for the placeholder image of the item."
+        },
+        "startingBid": {
+          "type": "number",
+          "description": "The starting bid amount for the auction."
+        },
+        "currentBid": {
+          "type": "number",
+          "description": "The current highest bid amount."
+        },
+        "highestBidder": {
+          "type": "string",
+          "description": "The user ID of the current highest bidder."
+        },
+        "auctionEndDate": {
+          "type": "string",
+          "description": "The date and time when the auction ends.",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the auction.",
+          "enum": ["active", "sold", "expired"]
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "startingBid",
+        "currentBid",
+        "auctionEndDate",
+        "status"
+      ]
+    },
+    "Activity": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Activity",
+      "type": "object",
+      "description": "Represents an item in the Project Hub activity feed.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of activity.",
+          "enum": [ "update", "task" ]
+        },
+        "author": {
+          "type": "string",
+          "description": "The name of the person who created the activity."
+        },
+        "authorImage": {
+            "type": "string",
+            "description": "URL for the author's avatar image.",
+            "format": "uri"
+        },
+        "text": {
+          "type": "string",
+          "description": "The main content of the activity item."
+        },
+        "time": {
+          "type": "string",
+          "description": "The timestamp when the activity occurred.",
+          "format": "date-time"
+        },
+        "taskId": {
+            "type": "string",
+            "description": "The ID of the related task, if type is 'task'."
+        }
+      },
+      "required": [
+        "type",
+        "author",
+        "text",
+        "time"
+      ]
+    },
+    "Task": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Task",
+      "type": "object",
+      "description": "Represents a task on the Kanban board.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the task."
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the task.",
+          "enum": [
+            "todo",
+            "in-progress",
+            "done",
+            "archived"
+          ]
+        },
+        "priority": {
+          "type": "string",
+          "description": "The priority of the task.",
+          "enum": [
+            "Low",
+            "Medium",
+            "High"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "description": "A list of tags associated with the task.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "assignee": {
+          "type": "string",
+          "description": "The assignee of the task."
+        },
+        "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp when the task was created."
+        },
+        "comments": {
+          "type": "array",
+          "description": "A list of comments or notes on the task.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "author": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": ["text", "author", "createdAt"]
+          }
+        }
+      },
+      "required": [
+        "title",
+        "status",
+        "priority",
+        "createdAt"
+      ]
+    },
+    "Service": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Service",
+      "type": "object",
+      "description": "Represents a service offered, including its description, pricing, and features.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the service."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the service."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the service."
+        },
+        "pricingTiers": {
+          "type": "array",
+          "description": "Array of pricing tiers available for the service.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "features": {
+          "type": "array",
+          "description": "Array of key features offered as part of the service.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "pricingTiers",
+        "features"
+      ]
+    },
+    "PortfolioItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "PortfolioItem",
+      "type": "object",
+      "description": "Represents an item in the portfolio, showcasing past work and client testimonials.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the portfolio item."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the portfolio item."
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the portfolio item."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the image associated with the portfolio item."
+        },
+        "clientTestimonial": {
+          "type": "string",
+          "description": "A testimonial from the client for this portfolio item."
+        },
+        "outcomeMetrics": {
+          "type": "string",
+          "description": "Quantifiable metrics demonstrating the outcome of the project."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "imageUrl",
+        "clientTestimonial",
+        "outcomeMetrics"
+      ]
+    },
+    "AboutMe": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AboutMe",
+      "type": "object",
+      "description": "Represents the 'About Me' section content, highlighting expertise and results.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the About Me section."
+        },
+        "content": {
+          "type": "string",
+          "description": "The main content of the 'About Me' section."
+        },
+        "expertiseAreas": {
+          "type": "array",
+          "description": "Array of expertise areas.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "measurableResults": {
+          "type": "string",
+          "description": "Description of measurable results achieved."
+        }
+      },
+      "required": [
+        "id",
+        "content",
+        "expertiseAreas",
+        "measurableResults"
+      ]
+    },
+    "ClientInquiry": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ClientInquiry",
+      "type": "object",
+      "description": "Represents a client inquiry submitted through the contact form.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the client inquiry."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the client submitting the inquiry."
+        },
+        "email": {
+          "type": "string",
+          "description": "The email address of the client.",
+          "format": "email"
+        },
+        "message": {
+          "type": "string",
+          "description": "The message submitted by the client."
+        },
+        "submittedDate": {
+          "type": "string",
+          "description": "The date and time the inquiry was submitted.",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of inquiry, either a general message or a specific booking request.",
+          "enum": [
+            "General Inquiry",
+            "Booking Request"
+          ]
+        },
+        "bookingFor": {
+          "type": "string",
+          "description": "The requested date and time for a booking, if applicable."
+        },
+        "conversationHistory": {
+          "type": "array",
+          "description": "A log of the conversation between the user and the AI assistant.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "role": {
+                "type": "string",
+                "enum": ["user", "model"]
+              },
+              "content": {
+                "type": "string"
+              }
+            },
+            "required": ["role", "content"]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email",
+        "message",
+        "submittedDate",
+        "type"
+      ]
+    },
+    "ContentRefinement": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContentRefinement",
+      "type": "object",
+      "description": "Represents a record of content refinement done via the AI tool.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the content refinement record."
+        },
+        "originalContent": {
+          "type": "string",
+          "description": "The original content before refinement."
+        },
+        "refinedContent": {
+          "type": "string",
+          "description": "The refined content after AI processing."
+        },
+        "refinementDate": {
+          "type": "string",
+          "description": "The date and time the content was refined.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "originalContent",
+        "refinedContent",
+        "refinementDate"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/auctionItems/{auctionItemId}",
+        "definition": {
+          "entityName": "AuctionItem",
+          "schema": {
+            "$ref": "#/entities/AuctionItem"
+          },
+          "description": "Stores items for the Digital Warehouse auction.",
+          "params": [
+            {
+              "name": "auctionItemId",
+              "description": "Unique identifier for the auction item."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/activities/{activityId}",
+        "definition": {
+          "entityName": "Activity",
+          "schema": {
+            "$ref": "#/entities/Activity"
+          },
+          "description": "Stores activity feed items for the Project Hub.",
+          "params": [
+            {
+              "name": "activityId",
+              "description": "Unique identifier for the activity."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/tasks/{taskId}",
+        "definition": {
+          "entityName": "Task",
+          "schema": {
+            "$ref": "#/entities/Task"
+          },
+          "description": "Stores tasks for the client dashboard Kanban board.",
+          "params": [
+            {
+              "name": "taskId",
+              "description": "Unique identifier for the task."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/services/{serviceId}",
+        "definition": {
+          "entityName": "Service",
+          "schema": {
+            "$ref": "#/entities/Service"
+          },
+          "description": "Stores information about services offered.",
+          "params": [
+            {
+              "name": "serviceId",
+              "description": "Unique identifier for the service."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/portfolioItems/{portfolioItemId}",
+        "definition": {
+          "entityName": "PortfolioItem",
+          "schema": {
+            "$ref": "#/entities/PortfolioItem"
+          },
+          "description": "Stores portfolio items showcasing past work.",
+          "params": [
+            {
+              "name": "portfolioItemId",
+              "description": "Unique identifier for the portfolio item."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/aboutMe/{aboutMeId}",
+        "definition": {
+          "entityName": "AboutMe",
+          "schema": {
+            "$ref": "#/entities/AboutMe"
+          },
+          "description": "Stores content for the 'About Me' section.",
+          "params": [
+            {
+              "name": "aboutMeId",
+              "description": "Unique identifier for the About Me section."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/clientInquiries/{clientInquiryId}",
+        "definition": {
+          "entityName": "ClientInquiry",
+          "schema": {
+            "$ref": "#/entities/ClientInquiry"
+          },
+          "description": "Stores client inquiries submitted through the contact form.",
+          "params": [
+            {
+              "name": "clientInquiryId",
+              "description": "Unique identifier for the client inquiry."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/contentRefinements/{contentRefinementId}",
+        "definition": {
+          "entityName": "ContentRefinement",
+          "schema": {
+            "$ref": "#/entities/ContentRefinement"
+          },
+          "description": "Stores AI-driven content refinements.",
+          "params": [
+            {
+              "name": "contentRefinementId",
+              "description": "Unique identifier for the content refinement record."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/roles_admin/{userId}",
+        "definition": {
+          "entityName": "role_admin",
+          "schema": {
+            "$ref": "#/entities/User"
+          },
+          "description": "Documents in this collection indicate admin privileges. Existence-based role.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "User ID of the admin."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to store and manage content for a personal portfolio website, including services, portfolio items, an 'About Me' section, and client inquiries. It also accommodates records of AI-driven content refinement. The structure prioritizes clarity, security, and scalability.\\n\\n**Authorization Independence:**\\nAll collections are designed to have homogeneous security needs, eliminating the need for complex hierarchical authorization.  Specifically, since this is a portfolio site, authorization is simple: only the owner/admin can create or modify the entities, except for ClientInquiries which are publicly writeable.  For the admin user, we'll use existence-based roles via the `/roles_admin/{uid}` collection.\\n\\n**QAPs (Rules are not Filters):**\\nSegregation is used to ensure secure list operations. Publicly writeable `/clientInquiries` are separated from the admin-writeable content like `/services`, `/portfolioItems`, and `/aboutMe`.  The existence of a document in `/roles_admin/{uid}` grants administrative privileges, which are then used in the security rules.\\n\\n**Collection Structure Justification:**\\n\\n*   `/auctionItems`: Stores auction items for the Digital Warehouse. Publicly readable, but only admins can create them. Authenticated users can update them (to place bids).\\n*   `/services`: Stores service offerings.  Each document represents a single service.\\n*   `/portfolioItems`: Stores portfolio items, showcasing past work.\\n*   `/aboutMe`: Stores the content for the 'About Me' section.  It is assumed there will be only one \\"About Me\\" document.\\n*   `/clientInquiries`: Stores client inquiries submitted through the contact form. Anyone can create documents in this collection, but only admins can read them.\\n*   `/contentRefinements`: Stores the AI-driven content refinements. These are assumed to be associated with the admin.\\n*   `/roles_admin/{uid}`:  Documents in this collection indicate that the user `{uid}` is an admin.  The existence of a document grants admin privileges, avoiding custom claims and simplifying security rules.\\n*   `/tasks`: Stores tasks for the Kanban board on the client dashboard. Authenticated users can read, but only admins can write.\\n*   `/activities`: Stores activity feed items for the Project Hub on the client dashboard. Authenticated users can read and write."
+  }
+}

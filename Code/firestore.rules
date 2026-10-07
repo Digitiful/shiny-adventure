@@ -1,0 +1,63 @@
+
+rules_version = '2';
+
+/**
+ * @file firestore.rules
+ * @description Hardened Firestore Security Rules for Digitiful Agency Node.
+ * Protocol Status: LIVE // Node: Alpha
+ */
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid));
+    }
+
+    // Public Signals (Broadcast-only)
+    match /clients/{clientId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    match /technology/{techId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    match /services/{serviceId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    match /portfolioItems/{portfolioItemId} {
+      allow get, list: if true;
+      allow write: if isAdmin();
+    }
+
+    // Mission Management (Internal)
+    match /tasks/{taskId} {
+      allow get, list, create, update, delete: if isSignedIn();
+    }
+
+    match /activities/{activityId} {
+        allow get, list, create, update, delete: if isSignedIn();
+    }
+
+    // External Intake Node
+    match /clientInquiries/{clientInquiryId} {
+      allow create: if true;
+      allow get, list, update, delete: if isAdmin();
+    }
+
+    // Admin Clearance
+    match /roles_admin/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update, delete: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,35 @@
+
+[
+  {
+    "id": "story-1",
+    "title": "Ecommerce Optmization / Creative services",
+    "imageId": "portfolio-retail",
+    "description": "We re-architected a legacy e-commerce system onto a modern, scalable cloud platform. The project involved a full data migration, custom checkout flow, and integration with a new inventory management system.",
+    "testimonial": {
+      "text": "The new platform is not only faster and more reliable, but our conversion rate has also increased by 25%. The Digitiful team delivered beyond our expectations.",
+      "author": "Mo Wahdan - CEO, Foot Placard.",
+      "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026704d"
+    },
+    "results": [
+      { "icon": "TrendingUp", "label": "25% Increase in Conversion Rate" },
+      { "icon": "Target", "label": "40% Reduction in Page Load Time" },
+      { "icon": "Star", "label": "99.9% Uptime SLA Achieved" }
+    ]
+  },
+  {
+    "id": "story-3",
+    "title": "SEO & Organic Growth for QuickToLink.com",
+    "imageId": "portfolio-quicktolink-seo",
+    "description": "Executed a comprehensive 16-month SEO and content strategy for QuickToLink.com. By focusing on technical SEO, high-quality content, and authority building, we achieved a massive uplift in organic search visibility and traffic.",
+    "testimonial": {
+      "text": "Digitiful's SEO work has been a game-changer. Seeing our organic traffic go from virtually zero to thousands of daily visitors has had a direct, positive impact on our business.",
+      "author": "CEO, QuickToLink.com",
+      "avatar": "https://i.pravatar.cc/150?u=a042581f4e29026707d"
+    },
+    "results": [
+      { "icon": "TrendingUp", "label": "+1.5M Organic Impressions" },
+      { "icon": "Target", "label": "+50K Total Clicks" },
+      { "icon": "Star", "label": "3.2% Average CTR" }
+    ]
+  }
+]
